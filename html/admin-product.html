@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/admin-product.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div style="display: flex;" class="sidebar">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              <span class="fs-4">
+                <a class="navbar-brand" href="./main.html"  style="display: flex; justify-content: center;">
+                    <img src="../image/3468 logo mashoes-01 (3).png" alt="" width="50" height="50">
+                    Mashoes
+                </a>
+              </span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="admin-product.html" class="nav-link link-dark">
+                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                  Sản Phẩm
+                </a>
+              </li>
+              <li>
+                <a href="admin-order.html" class="nav-link link-dark">
+                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                  Đơn Hàng
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link link-dark">
+                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                  Nhóm Sản Phẩm
+                </a>
+              </li>
+            </ul>
+          </div>
+        <div style="width: 100%; display: flex; justify-content: center; flex-direction: column; align-self: first baseline;">
+            <div class="add-product-title">
+                <h1>Danh Sách Sản Phẩm</h1>
+                <button class="add-product-button" id="add-product-button"><ion-icon name="add-circle-outline"></ion-icon>  Thêm Sản Phẩm</button>
+            </div>
+            <table id="table">
+                <tr style="width: 100%; background-color: green; color: white;">
+                    <th class="product-image">Ảnh</th>
+                    <th class="product-class">Tên Sản Phẩm</th>
+                    <th class="product-price">Số lượng</th>
+                    <th class="">Giá</th>
+                    <th class="action">Thao Tác</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="add-product-form" id="add-product-form" style="background-color: rgb(0, 0, 0, 0.5); width: 100%; height: 100%; position: fixed;top: 0; display: none; justify-content: center; align-items: center;">
+        <div style="background-color: white; padding: 20px;">
+            <h1 style="margin: 0 0 20px 0">Thêm Sản Phẩm</h1>
+            <form action="" style="display: flex; flex-direction: column; gap: 20px;" id="form">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <input type="text" placeholder="Tên Sản Phẩm" style="width: 100%;" id="product-name-input">
+                    <input type="text" placeholder="Số lượng" style="width: 20%;" id="product-storage-input">
+                    <input type="text" placeholder="Giá Sản Phẩm" style="width: 50%;" id="product-price-input">
+                    <input type="text" placeholder="SKU" style="width: 20%;" id="product-sku-input">
+                    <textarea placeholder="Mô tả" style="width: 100%; min-height: 200px;" id="product-description-input"></textarea>
+                </div>
+                <div class="color-size-container" style="display: flex; gap: 20px;">
+                  <div id="list1" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Chọn Màu Sắc</span>
+                    <ul class="items">
+                      <li><input type="checkbox" id="black">Đen</li>
+                      <li><input type="checkbox" id="white">Trắng</li>
+                      <li><input type="checkbox" id="cream">Kem</li>
+                      <li><input type="checkbox" id="brown">Nâu</li>
+                      <li><input type="checkbox" id="silver">Bạc</li>
+                      <li><input type="checkbox" id="gold">Vàng</li>
+                    </ul>
+                  </div>
+
+                  <div id="list2" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Chọn Size</span>
+                    <ul class="items">
+                      <li><input type="checkbox" id="35">35</li>
+                      <li><input type="checkbox" id="36">36</li>
+                      <li><input type="checkbox" id="37">37</li>
+                      <li><input type="checkbox" id="38">38</li>
+                      <li><input type="checkbox" id="39">39</li>
+                      <li><input type="checkbox" id="40">40</li>
+                    </ul>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <input type="file" required id="product-image-input">
+                </div>
+                <div style="display: flex; justify-content: flex-end;">
+                    <button class="cancel-button" id="cancel-button" style="width: 100px; color: white; background-color: red; border: 0; border-radius: 5px; font-size: 20px; margin: 10px;" >Hủy</button>
+                    <button class="submit-button" id="submit-button" style="width: 100px; color: white; background-color: blue; border: 0; border-radius: 5px; font-size: 20px; margin: 10px;">Xong</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+            <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+
+    <!-- Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+    <script src="../js/firebase_config.js"></script>
+    <script src="../js/admin-product.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+</body>
+</html>

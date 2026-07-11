@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/product-overview.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./main.html">
+                <img src="../image/3468 logo mashoes-01 (3).png" alt="" width="50" height="50">
+                Mashoes
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./main.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="./product.html">Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <ion-icon name="grid-outline" style="font-size: 40px;"></ion-icon>
+            </button>
+            <div class="nav-icon-container">
+                <div class="search-container">
+                    <ion-icon name="search-outline" style="font-size: 30px;" class="search-icon"></ion-icon>
+                    <input type="text" placeholder="Search" class="search-bar">
+                </div>
+                <div class="log-container">
+                    <ion-icon name="person-outline" style="font-size: 30px; margin-left: 10px; margin-right: 10px;" class="log-icon"></ion-icon>
+                    <div class="log-wrapper">
+                        <a href="./login.html">Login</a>
+                        <a href="./register.html">Register</a>
+                    </div>
+                </div>
+                <ion-icon name="cart-outline" style="font-size: 30px; margin-right: 10px;"></ion-icon>
+            </div>
+        </div>
+    </nav>
+
+    <div style="display: flex; padding: 50px; margin: 50px; justify-content: center; gap: 50px; width: fit-content;">
+        <img src="" alt="" id="product-image-container">
+        <div style="width: fit-content;">
+            <h3 id="product-name-container" style="width: 70%"></h3>
+            <h4 id="product-price-container" style="color: red; width: 70%;"></h4>
+            <p id="product-description-container" style="width: 70%;"></p>
+            <div class="button-container">
+                <button id="button1">Mua Hàng Ngay</button>
+                <button id="button2">Thêm Vào Giỏ Hàng</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" style="display: flex; justify-content: center;"> 
+        <div class="col mb-3"> 
+            <h5>Kết Nối với Chúng Tôi</h5>
+            <ul class="nav flex-column"> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary" style="display: flex; align-items: center; gap: 2px;">
+                        <ion-icon name="logo-facebook" class="text-body-secondary"></ion-icon>
+                        Facebook
+                    </a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary" style="display: flex; align-items: center; gap: 2px;">
+                        <ion-icon name="logo-instagram" class="text-body-secondary"></ion-icon>
+                        Instagram
+                    </a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary" style="display: flex; align-items: center; gap: 2px;">
+                        <ion-icon name="logo-Tiktok" class="text-body-secondary"></ion-icon>
+                        Tiktok 
+                    </a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary" style="display: flex; align-items: center; gap: 2px;">
+                        <ion-icon name="logo-Youtube" class="text-body-secondary"></ion-icon>
+                        Youtube
+                    </a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary" style="display: flex; align-items: center; gap: 2px;">
+                        <ion-icon name="albums-outline" class="text-body-secondary"></ion-icon>
+                        Website
+                    </a>
+                </li> 
+            </ul> 
+        </div> 
+
+        <div class="col mb-3"> 
+            <h5>Hỗ Trợ Khách Hàng</h5>
+            <ul class="nav flex-column"> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Sản Phẩm Nổi Bật</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Tất Cả Sản Phẩm</a>
+                </li> 
+            </ul> 
+        </div>
+
+        <div class="col mb-3"> 
+            <h5>Tham Quan</h5>
+            <ul class="nav flex-column"> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Trang Chủ</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Sản Phẩm</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Blog</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                </li> 
+            </ul> 
+        </div>
+
+        <div class="col mb-3"> 
+            <h5>Chính Sách</h5>
+            <ul class="nav flex-column"> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Chính Sách Đổi Trả</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Chính Sách Bảo Mật</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Chính Sách Vận Chuyển</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-body-secondary">Chính Sách Thanh Toán</a>
+                </li> 
+            </ul> 
+        </div> 
+    </footer>
+
+
+
+
+            <!-- Firebase -->
+            <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+        
+            <!-- Realtime Database -->
+            <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+            <script src="../js/firebase_config.js"></script>
+            <script src="../js/product-overview.js"></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+        
+            <script src="https://www.chatbase.co/embed.min.js" chatbotId="1_Ei1n9p8MfmY1lgzc_Iq" domain="www.chatbase.co" defer></script>
+</body>
+</html>

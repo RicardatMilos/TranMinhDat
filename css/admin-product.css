@@ -1,0 +1,135 @@
+.navbar-brand{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    font-size: 20px;
+}
+
+.sidebar{
+    height: 100%;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar a{
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar ul li{
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+}
+
+.sidebar ul li:hover{
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.add-product-title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px;
+}
+
+.add-product-title h1{
+    margin: 0;
+}
+
+.add-product-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+    border: 0;
+    margin-right: 100px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.add-product-button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.add-product-button ion-icon{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+
+table{
+    width: 90%;
+    align-self: center;
+    border: 1px black solid;
+    margin-bottom: 100px;
+}
+
+tr{
+    color: rgb(0,0,0,0.3);
+    font-size: 10px;
+}
+
+td{
+    color: black;
+    font-size: 10px;
+}
+
+th{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.product-image{
+    width: 5%;
+}
+.product-name{
+    width: 50%;
+}
+.action{
+    width: 20%;
+}
+
+.add-product-form button:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.dropdown-check-list {
+    display: inline-block;
+  }
+  
+  .dropdown-check-list .anchor {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid rgb(0,0,0,0.8);
+    border-radius: 5px;
+  }
+  
+  .dropdown-check-list ul.items {
+    padding: 2px;
+    display: none;
+    margin: 0;
+    border-top: none;
+  }
+  
+  .dropdown-check-list ul.items li {
+    list-style: none;
+  }
+  
+  .dropdown-check-list.visible .items {
+    display: block;
+  }
