@@ -87,6 +87,18 @@ window.addEventListener('DOMContentLoaded', () => {
                     productSkuInput.value = product.productSku;
                     productDescriptionInput.value = product.productDescription;
 
+                    colorCheckboxes.forEach(cb => {
+                        cb.checked = product.productColors
+                            ? product.productColors.includes(cb.id)
+                            : false;
+                    });
+                    
+                    sizeCheckboxes.forEach(cb => {
+                        cb.checked = product.productSizes
+                            ? product.productSizes.includes(cb.id)
+                            : false;
+                    });
+
                     // Hiện form lên để sửa
                     addProductForm.style.display = 'flex';
                     submitButton.textContent = 'Cập nhật sản phẩm';
@@ -115,12 +127,23 @@ window.addEventListener('DOMContentLoaded', () => {
                         db.collection("products").where("productName", "==", product.productName).get()
                             .then(snapshot => {
                                 snapshot.forEach(doc => {
+                                    let selectedColors = [...colorCheckboxes]
+                                        .filter(cb => cb.checked)
+                                        .map(cb => cb.id);
+                                
+                                    let selectedSizes = [...sizeCheckboxes]
+                                        .filter(cb => cb.checked)
+                                        .map(cb => cb.id);
+
                                     db.collection("products").doc(doc.id).update({
                                         productName: newName,
                                         productStorage: newStorage,
                                         productPrice: newPrice,
                                         productSku: newSku,
                                         productDescription: newDescription,
+
+                                        productColors: selectedColors,
+                                        productSizes: selectedSizes
                                     });
                                 });
 
@@ -196,8 +219,25 @@ submitButton.addEventListener('click', (e) => {
     let productSku = productSkuInput.value.trim()
     let productDescription = productDescriptionInput.value.trim()
 
-    if (!productName || !productStorage || !productPrice || productImageInput.files.length === 0 || !productSku || !productDescription) {
-        alert("Vui lòng điền thông tin đầy đủ")
+    let selectedColors = [...colorCheckboxes]
+        .filter(cb => cb.checked)
+        .map(cb => cb.id);
+
+    let selectedSizes = [...sizeCheckboxes]
+        .filter(cb => cb.checked)
+        .map(cb => cb.id);
+
+    if (
+        !productName ||
+        !productStorage ||
+        !productPrice ||
+        productImageInput.files.length === 0 ||
+        !productSku ||
+        !productDescription ||
+        selectedColors.length === 0 ||
+        selectedSizes.length === 0
+    ) {
+        alert("Vui lòng điền đầy đủ thông tin, màu sắc và size");
         return;
     }
 
@@ -284,6 +324,9 @@ submitButton.addEventListener('click', (e) => {
                 productImage: imageUrl,
                 productSku: productSkuInput.value,
                 productDescription: productDescriptionInput.value,
+            
+                productColors: selectedColors,
+                productSizes: selectedSizes
             };
         
             return db.collection("products").add(productData);
@@ -377,14 +420,14 @@ submitButton.addEventListener('click', (e) => {
     }
 })
 
-checkList1.getElementsByClassName('anchor')[0].onclick = function(evt) {
+checkList1.getElementsByClassName('anchor')[0].onclick = function(e) {
   if (checkList1.classList.contains('visible'))
     checkList1.classList.remove('visible');
   else
     checkList1.classList.add('visible');
 }
 
-checkList2.getElementsByClassName('anchor')[0].onclick = function(evt) {
+checkList2.getElementsByClassName('anchor')[0].onclick = function(e) {
   if (checkList2.classList.contains('visible'))
     checkList2.classList.remove('visible');
   else

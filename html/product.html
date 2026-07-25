@@ -45,7 +45,7 @@
                         <a href="./register.html">Register</a>
                     </div>
                 </div>
-                <ion-icon name="cart-outline" style="font-size: 30px; margin-right: 10px;"></ion-icon>
+                <ion-icon name="cart-outline" style="font-size: 30px; margin-right: 10px;" id="cart"></ion-icon>
             </div>
         </div>
     </nav>
@@ -56,44 +56,6 @@
 
     <div>
         
-    </div>
-
-    <div class="payment-container" id="payment-container">
-        <ion-icon name="backspace-outline" style="position: fixed; top: 20px; left: 20px; font-size: 50px; color: white;" id="back-button"></ion-icon>
-        <div class="payment-form">
-            <div>
-                <div class="payment-form-1">
-                    <h2>BILLING</h2>
-                    <input type="text" placeholder="Full Name" id="full-name">
-                    <input type="text" placeholder="Email Address" id="email-address">
-                    <input type="text" placeholder="Home Address" id="home-address">
-                    <input type="text" placeholder="City" id="city">
-                    <div class="additional-payment-form">
-                        <input type="text" placeholder="Nation" id="nation">
-                        <input type="text" placeholder="Zipcode" id="zipcode">
-                    </div>
-                </div>
-    
-                <div class="payment-form-2">
-                    <h2>PAYMENT</h2>
-                    <div class="payment-image-container">
-                        <p>Card choices: </p>
-                        <img src="https://logospng.org/download/paypal/logo-paypal-4096.png" alt="">
-                        <img src="https://logospng.org/download/mastercard/logo-mastercard-4096.png" alt="">
-                        <img src="https://logospng.org/download/american-express/logo-american-express-4096.png" alt="">
-                        <img src="https://logospng.org/download/visa/logo-visa-1536.png" alt="">
-                    </div>
-                    <input type="text" placeholder="Name On Card" id="name-on-card">
-                    <input type="text" placeholder="Credit Card Number" id="credit-card-number">
-                    <input type="text" placeholder="Expired Month" id="expired-month">
-                    <div class="additional-payment-form">
-                        <input type="text" placeholder="Expired Year" id="expired-year">
-                        <input type="text" placeholder="CVV" id="cvv">
-                    </div>
-                </div>
-            </div>
-            <button class="payment-submit" id="payment-submit">Submit</button>
-        </div>
     </div>
 
 
@@ -182,6 +144,31 @@
             </ul> 
         </div> 
     </footer>
+
+    <div class="overlay" id="overlay">
+        <div class="cart-container" style="position: relative;;">
+            <ion-icon id="return-button" name="caret-back-circle-outline" style="position: absolute; left: 10px; top: 10px; font-size: 30px; cursor: pointer;"></ion-icon>
+            <h2>Giỏ Hàng</h2>
+            <div id='cart-overall-container'></div>
+            <div class="cart-overall" style="position: relative;">
+                <p class="cart-overall-quantity" style="font-weight: 700; font-size: 20px; margin: 0;">Số lượng: <span id="cart-overall-quantity"></span></p>
+                <p class="cart-overall-price" style="font-weight: 700; font-size: 20px; margin: 0;">Tổng tiền: <span id="cart-overall-price"></span></p>
+                <button id="cart-overall-purchase-button" style="position: absolute;right: 0; border: black 1px solid; border-radius: 10px; padding: 10px;bottom: 0;">Mua Ngay</button>
+                <button style="border: 0; background-color: white; color: black; height: 60px;"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-overlay" id="payment-overlay">
+        <div class="payment-container">
+            <ion-icon name="backspace-outline" id="back-payment-button"></ion-icon>
+            <h5>Số tiền cần trả: <span id="price-payment-container"></span></h1>
+            <img src="../image/02d0b6cc-f7ba-464b-a7d4-41b2c4c9b494.jpg" alt="">
+            <p>*Yêu cầu gửi đúng số tiền cần trả!</p>
+        </div>
+
+    </div>
+
 
 
             <!-- Firebase -->
