@@ -172,14 +172,29 @@
         </div>
     </div>
 
-    <div class="payment-overlay" id="payment-overlay">
-        <div class="payment-container">
-            <ion-icon name="backspace-outline" id="back-payment-button"></ion-icon>
-            <h5>Số tiền cần trả: <span id="price-payment-container"></span></h1>
-            <img src="../image/02d0b6cc-f7ba-464b-a7d4-41b2c4c9b494.jpg" alt="">
-            <p>*Yêu cầu gửi đúng số tiền cần trả!</p>
-        </div>
+    <div class="information-overlay" id="information-overlay">
+        <div class="information-container" style="text-align: center; position: relative;">
+            <ion-icon name="backspace-outline" id="back-information-button" style="z-index: 820; position: absolute; left: 5px; top: 5px; font-size: 30px;"></ion-icon>
+            <h1 style="margin: 0;">Thông tin khách hàng</h1>
+            <p style="color: red;">*Vui lòng điền thông tin đầy đủ để xác lập đơn hàng</p>
+            <div class="customer-information-container">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <ion-icon name="person-outline" style="right: 10px; z-index: 800;"></ion-icon>
+                    <input type="text" placeholder="Họ và Tên" style="width: 100%;" id="name">
+                </div>
 
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <ion-icon name="call-outline" style="right: 10px; z-index: 800;"></ion-icon>
+                    <input type="text" placeholder="Số Điện Thoại" style="width: 100%;" id="phone">
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 30px;">
+                    <ion-icon name="home-outline" style="right: 10px; z-index: 800;"></ion-icon>
+                    <input type="text" placeholder="Địa Chỉ Giao Hàng" style="width: 100%;" id="address">
+                </div>
+            </div>
+            <button style="position: absolute; right: 20px; bottom: 20px;" id="continue-button">Tiếp tục</button>
+        </div>
     </div>
 
 

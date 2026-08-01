@@ -9,6 +9,12 @@ let paymentOverlay = document.getElementById('payment-overlay')
 let backPaymentButton = document.getElementById('back-payment-button')
 let cartOverallPurchaseButton = document.getElementById('cart-overall-purchase-button')
 let pricePaymentContainer = document.getElementById('price-payment-container')
+let inpName = document.getElementById('name')
+let inpPhone = document.getElementById('phone')
+let inpAddress = document.getElementById('address')
+let continueButton = document.getElementById('continue-button')
+let informationOverlay = document.getElementById('information-overlay')
+let backInformationButton = document.getElementById('back-information-button')
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -41,12 +47,13 @@ function renderCart() {
 
     cartOverallContainer.innerHTML = "";
 
+    let shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
+
     let totalQuantity = 0;
     let totalPrice = 0;
 
-    let shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
-
     shoppingList.forEach(item => {
+
         totalQuantity += item.quantity;
         totalPrice += item.productPrice * item.quantity;
 
@@ -60,51 +67,59 @@ function renderCart() {
         productDiv.style.paddingBottom = "10px";
 
         productDiv.innerHTML = `
-        <img src="${item.productImage}" width="80" height="80" style="border-radius:10px">
-    
-        <div style='position: relative'>
-            <h5>${item.productName}</h5>
-            <p style="color:red; margin:0">${item.productPrice}</p>
-            <p>Số lượng: ${item.quantity}</p>
-    
-            <button class="delete-btn" style='position:absolute; right:0; bottom:0'>Delete</button>
-        </div>
-    `;
+            <img src="${item.productImage}" width="80" height="80" style="border-radius:10px">
+
+            <div style="position:relative; width:100%;">
+
+                <h5>${item.productName}</h5>
+
+                <p style="color:red;margin:0;">
+                    ${Number(item.productPrice).toLocaleString("vi-VN")}đ
+                </p>
+
+                <p>Số lượng: ${item.quantity}</p>
+
+                <button class="delete-btn"
+                    style="position:absolute;right:0;bottom:0;">
+                    Delete
+                </button>
+
+            </div>
+        `;
+
         let deleteButton = productDiv.querySelector(".delete-btn");
-        deleteButton.addEventListener("click", (e) => {
-            e.preventDefault()
+
+        deleteButton.addEventListener("click", () => {
 
             let shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
-        
+
             shoppingList = shoppingList.filter(product => {
+
                 return product.productSku !== item.productSku;
+
             });
-        
-            localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
-        
+
+            localStorage.setItem(
+                "shoppingList",
+                JSON.stringify(shoppingList)
+            );
+
             renderCart();
-        
+
         });
-
-        cartOverallPurchaseButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            paymentOverlay.style.display = 'flex'
-
-            pricePaymentContainer.innerHTML = ''
-            pricePaymentContainer.innerHTML = totalPrice.toLocaleString('vi-VN') + 'đ'
-        })
 
         cartOverallContainer.appendChild(productDiv);
 
     });
 
     cartOverallQuantity.innerHTML = totalQuantity;
-    cartOverallPrice.innerHTML = totalPrice.toLocaleString("vi-VN") + "đ";
+
+    cartOverallPrice.innerHTML =
+        totalPrice.toLocaleString("vi-VN") + "đ";
 
 }
 
-cart.addEventListener("click", (e) => {
-    e.preventDefault()
+cart.addEventListener("click", () => {
 
     renderCart();
 
@@ -112,15 +127,107 @@ cart.addEventListener("click", (e) => {
 
 });
 
-returnButton.addEventListener("click", (e) => {
-    e.preventDefault()
+returnButton.addEventListener("click", () => {
 
     overlay.style.display = "none";
 
 });
 
-backPaymentButton.addEventListener('click', (e) => {
-    e.preventDefault()
+cartOverallPurchaseButton.addEventListener("click", (e) => {
 
-    paymentOverlay.style.display = 'none'
-})
+    e.preventDefault();
+
+    let shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
+
+    if (shoppingList.length === 0) {
+
+        alert("Vui lòng chọn sản phẩm!");
+
+        return;
+
+    }
+
+    informationOverlay.style.display = "flex";
+
+});
+
+backInformationButton.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    informationOverlay.style.display = "none";
+
+});
+
+continueButton.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    let name = inpName.value.trim();
+    let phone = inpPhone.value.trim();
+    let address = inpAddress.value.trim();
+
+    if (!name || !phone || !address) {
+
+        alert("Vui lòng điền đầy đủ thông tin!");
+
+        return;
+
+    }
+
+    let shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
+
+    if (shoppingList.length === 0) {
+
+        alert("Giỏ hàng đang trống!");
+
+        return;
+
+    }
+
+    let totalQuantity = 0;
+    let totalPrice = 0;
+
+    shoppingList.forEach(item => {
+
+        totalQuantity += item.quantity;
+
+        totalPrice += item.productPrice * item.quantity;
+
+    });
+
+    let userInfo = {
+
+        name,
+
+        phone,
+
+        address
+
+    };
+
+    let orderInfo = {
+
+        products: shoppingList,
+
+        totalQuantity,
+
+        totalPrice
+
+    };
+
+    localStorage.setItem(
+        "userInfo",
+        JSON.stringify(userInfo)
+    );
+
+    localStorage.setItem(
+        "orderInfo",
+        JSON.stringify(orderInfo)
+    );
+
+    informationOverlay.style.display = "none";
+
+    window.location.href = "confirm.html";
+
+});

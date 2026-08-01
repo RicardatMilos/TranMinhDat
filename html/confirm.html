@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/product-overview.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+    <link rel="stylesheet" href="../css/confirm.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -50,18 +50,54 @@
         </div>
     </nav>
 
-    <div style="display: flex; padding: 50px; margin: 50px; justify-content: center; gap: 50px; width: fit-content;">
-        <img src="" alt="" id="product-image-container">
-        <div style="width: fit-content;">
-            <h3 id="product-name-container" style="width: 70%"></h3>
-            <h4 id="product-price-container" style="color: red; width: 70%;"></h4>
-            <p id="product-description-container" style="width: 70%;"></p>
-            <div class="button-container">
-                <button id="button1">Mua Hàng Ngay</button>
-                <button id="button2">Thêm Vào Giỏ Hàng</button>
+    <div style="display: flex; gap: 20px; justify-content: center; margin: 40px;">
+        <div style="width: 65%; box-shadow:rgb(0, 0, 0, 0.2) 0 0 5px; border-radius: 10px; text-align: center;">
+            <h3 style="margin: 30px;">Đơn Hàng</h3>
+            <div  id="product-container">
+
             </div>
         </div>
+        <div style="width: 30%; box-shadow: rgba(0,0,0,0.2) 0 0 5px; border-radius: 10px; text-align: left; padding: 20px; position: relative; justify-content: center;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+                <h3 style="align-self: center; margin: 10px;">Thông Tin Khách Hàng</h3>
+        
+                <p><strong>Họ và Tên:</strong> <span id="customer-name"></span></p>
+        
+                <p><strong>Số Điện Thoại:</strong> <span id="customer-phone"></span></p>
+        
+                <p><strong>Địa Chỉ Giao Hàng:</strong> <span id="customer-address"></span></p>
+            </div>
+
+            <div style="width: 100%;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+                    <h3 style="align-self: center;">Xác Nhận Đơn Hàng</h3>
+            
+                    <p><strong>Số Lượng:</strong> <span id="customer-quantity"></span></p>
+            
+                    <p><strong>Tạm Tính:</strong> <span id="customer-price"></span></p>
+
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Mã Giảm Giá" style="width: 100%;" id="discount">
+                        <button style="width: 120px; border: 0; background-color: white; text-decoration: underline;" id="apply-discount">Áp Dụng</button>
+                    </div>
+                </div>
+            </div>
+            <button id="confirm-button" style="border: 0; background-color: white; cursor: pointer; margin: 30px; right: 0; position: absolute; text-decoration: underline;">Xác Nhận</button>
+        </div>
     </div>
+
+    <div class="payment-overlay" id="payment-overlay" style="z-index: 800;">
+        <div class="payment-container">
+            <ion-icon name="backspace-outline" id="back-payment-button" style="z-index: 999;"></ion-icon>
+            <h5>Số tiền cần trả: <span id="price-payment-container"></span></h1>
+            <img src="../image/02d0b6cc-f7ba-464b-a7d4-41b2c4c9b494.jpg" alt="">
+            <p>*Yêu cầu gửi đúng số tiền cần trả!</p>
+        </div>
+
+    </div>
+
+
+
 
 
 
@@ -155,56 +191,6 @@
         </div> 
     </footer>
 
-    <div class="overlay" id="overlay">
-        <div class="cart-container" style="position: relative;;">
-            <ion-icon id="return-button" name="carset-back-circle-outline" style="position: absolute; left: 10px; top: 10px; font-size: 30px; cursor: pointer;"></ion-icon>
-            <h2>Giỏ Hàng</h2>
-            <div id='cart-overall-container'></div>
-            <div class="cart-overall" style="position: relative;">
-                <p class="cart-overall-quantity" style="font-weight: 700; font-size: 20px; margin: 0;">Số lượng: <span id="cart-overall-quantity"></span></p>
-                <p class="cart-overall-price" style="font-weight: 700; font-size: 20px; margin: 0;">Tổng tiền: <span id="cart-overall-price"></span></p>
-                <button id="cart-overall-purchase-button" style="position: absolute;right: 0; border: black 1px solid; border-radius: 10px; padding: 10px;bottom: 0;">Mua Ngay</button>
-                <button style="border: 0; background-color: white; color: black; height: 60px;"></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="payment-overlay" id="payment-overlay" style="z-index: 800;">
-        <div class="payment-container">
-            <ion-icon name="backspace-outline" id="back-payment-button" style="z-index: 999;"></ion-icon>
-            <h5>Số tiền cần trả: <span id="price-payment-container"></span></h1>
-            <img src="../image/02d0b6cc-f7ba-464b-a7d4-41b2c4c9b494.jpg" alt="">
-            <p>*Yêu cầu gửi đúng số tiền cần trả!</p>
-        </div>
-
-    </div>
-
-    <div class="information-overlay" id="information-overlay">
-        <div class="information-container" style="text-align: center; position: relative;">
-            <ion-icon name="backspace-outline" id="back-information-button" style="z-index: 820; position: absolute; left: 5px; top: 5px; font-size: 30px;"></ion-icon>
-            <h1 style="margin: 0;">Thông tin khách hàng</h1>
-            <p style="color: red;">*Vui lòng điền thông tin đầy đủ để xác lập đơn hàng</p>
-            <div class="customer-information-container">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                    <ion-icon name="person-outline" style="right: 10px; z-index: 800;"></ion-icon>
-                    <input type="text" placeholder="Họ và Tên" style="width: 100%;" id="name">
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                    <ion-icon name="call-outline" style="right: 10px; z-index: 800;"></ion-icon>
-                    <input type="text" placeholder="Số Điện Thoại" style="width: 100%;" id="phone">
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 30px;">
-                    <ion-icon name="home-outline" style="right: 10px; z-index: 800;"></ion-icon>
-                    <input type="text" placeholder="Địa Chỉ Giao Hàng" style="width: 100%;" id="address">
-                </div>
-            </div>
-            <button style="position: absolute; right: 20px; bottom: 20px;" id="continue-button">Tiếp tục</button>
-        </div>
-    </div>
-
-
             <!-- Firebase -->
             <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
             <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
@@ -214,13 +200,12 @@
             <!-- Realtime Database -->
             <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
             <script src="../js/firebase_config.js"></script>
-            <script src="../js/product-overview.js"></script>
-        
+            <script src="../js/confirm.js"></script>
+
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
             <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
-        
+
             <script src="https://www.chatbase.co/embed.min.js" chatbotId="1_Ei1n9p8MfmY1lgzc_Iq" domain="www.chatbase.co" defer></script>
 </body>
 </html>

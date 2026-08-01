@@ -322,7 +322,7 @@ footer button{
 
   background: rgba(0, 0, 0, 0.3); /* dark transparent layer */
   backdrop-filter: blur(8px);      /* blur everything behind */
-  z-index: 999;
+  z-index: 500;
 }
 
 .cart-container {
@@ -347,7 +347,19 @@ footer button{
   transition: 0.5s all;
 }
 
-.payment-overlay{
+.delete-btn{
+  padding: 5px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.delete-btn:hover{
+  color: red;
+  transition: 0.5s all;
+}
+
+.information-overlay{
   position: fixed;
   top: 0;
   left: 0;
@@ -360,10 +372,10 @@ footer button{
 
   background: rgba(0, 0, 0, 0.3); /* dark transparent layer */
   backdrop-filter: blur(8px);      /* blur everything behind */
-  z-index: 999;
+  z-index: 900;
 }
 
-.payment-container{
+.information-container{
   width: fit-content;
   padding: 50px;
 
@@ -372,37 +384,24 @@ footer button{
 
   box-shadow: 0 10px 30px rgba(0,0,0,.3);
   display:block;
-
-}
-.payment-container{
-  text-align: center;
-  position: relative;
 }
 
-.payment-container img{
-  width: 300px;
+.information-container input{
+  border: none;
+  border-bottom: black 1px solid;
 }
 
-.payment-container p{
-  color: red;
+.information-container input:focus{
+  outline: none;
 }
 
-.payment-container ion-icon{
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  font-size: 30px;
-  cursor:pointer;
-}
-
-.delete-btn{
-  padding: 5px;
+.information-container button{
   border: none;
   background-color: white;
-  border-radius: 10px;
 }
 
-.delete-btn:hover{
-  color: red;
-  transition: 0.5s all;
+.information-container button:hover{
+  font-size: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
 }

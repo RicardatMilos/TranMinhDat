@@ -459,7 +459,7 @@ margin: 0;
 
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
-  z-index: 999;
+  z-index: 700;
 }
 
 .cart-container {
@@ -484,54 +484,6 @@ margin: 0;
   transition: 0.5s all;
 }
 
-.payment-overlay{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(0, 0, 0, 0.3); /* dark transparent layer */
-  backdrop-filter: blur(8px);      /* blur everything behind */
-  z-index: 999;
-}
-
-.payment-container{
-  width: fit-content;
-  padding: 50px;
-
-  background: white;
-  border-radius: 12px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,.3);
-  display:block;
-
-}
-.payment-container{
-  text-align: center;
-  position: relative;
-}
-
-.payment-container img{
-  width: 300px;
-}
-
-.payment-container p{
-  color: red;
-}
-
-.payment-container ion-icon{
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  font-size: 30px;
-  cursor:pointer;
-}
-
 .delete-btn{
   padding: 5px;
   border: none;
@@ -546,4 +498,51 @@ margin: 0;
 
 #back-payment-button{
   z-index: 999;
+}
+
+.information-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.3); /* dark transparent layer */
+  backdrop-filter: blur(8px);      /* blur everything behind */
+  z-index: 900;
+}
+
+.information-container{
+  width: fit-content;
+  padding: 50px;
+
+  background: white;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  display:block;
+}
+
+.information-container input{
+  border: none;
+  border-bottom: black 1px solid;
+}
+
+.information-container input:focus{
+  outline: none;
+}
+
+.information-container button{
+  border: none;
+  background-color: white;
+}
+
+.information-container button:hover{
+  font-size: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
 }
