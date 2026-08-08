@@ -38,7 +38,7 @@ function handleLogin(e){
                     if (data.role_id === 1) {
                         window.location.href = "../html/admin-product.html"; // admin
                     } else {
-                        window.location.href = "main.html"; // client
+                        window.location.href = "index.html"; // client
                     }
                 } else {
                     console.log("Không tìm thấy user trong Firestore");

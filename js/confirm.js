@@ -209,7 +209,7 @@ confirmButton.addEventListener("click", async (e) => {
 
             paymentOverlay.style.display = "none";
 
-            window.location.href = "main.html";
+            window.location.href = "index.html";
 
         }, 3000);
 
