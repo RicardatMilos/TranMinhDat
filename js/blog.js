@@ -22,30 +22,41 @@ let backInformationButton = document.getElementById('back-information-button')
 fetch(url)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
 
-        for (i = 0; i <= 11; i++ ) {
+        console.log(data);
+
+        if (data.status !== "ok") {
+            console.error("NewsAPI error:", data);
+            return;
+        }
+
+        for (let i = 0; i < Math.min(12, data.articles.length); i++) {
+
             let singleNewsContainer = document.createElement('div');
-            let newsImage = document.createElement('img')
-            let newsTitle = document.createElement('h3')
-            let article = data.articles[i]
-    
-            singleNewsContainer.classList.add('single-news-container')
-            newsImage.classList.add('news-image')
-            newsTitle.classList.add('news-title')
-    
-            newsContainer.appendChild(singleNewsContainer)
-            singleNewsContainer.appendChild(newsImage)
-            singleNewsContainer.appendChild(newsTitle)
+            let newsImage = document.createElement('img');
+            let newsTitle = document.createElement('h3');
 
-            newsImage.src = article.urlToImage
-            newsTitle.innerHTML = article.title
+            let article = data.articles[i];
 
-            singleNewsContainer.addEventListener('click', (e) => {
-                window.location.assign(article.url)
-            })
+            singleNewsContainer.classList.add('single-news-container');
+            newsImage.classList.add('news-image');
+            newsTitle.classList.add('news-title');
+
+            newsContainer.appendChild(singleNewsContainer);
+            singleNewsContainer.appendChild(newsImage);
+            singleNewsContainer.appendChild(newsTitle);
+
+            newsImage.src = article.urlToImage;
+            newsTitle.innerHTML = article.title;
+
+            singleNewsContainer.addEventListener('click', () => {
+                window.location.assign(article.url);
+            });
         }
     })
+    .catch(error => {
+        console.error("Fetch NewsAPI failed:", error);
+    });
 
     
 cart.addEventListener('click', () => {

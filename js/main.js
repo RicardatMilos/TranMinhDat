@@ -95,7 +95,7 @@ function createProductCard(parent, product, canClick) {
 
             localStorage.setItem("ID", product.productSku);
 
-            window.location.href = "product-overview.html";
+            window.location.href = "./html/product-overview.html";
 
         });
 
