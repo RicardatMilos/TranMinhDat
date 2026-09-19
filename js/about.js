@@ -5,10 +5,7 @@ let returnButton = document.getElementById('return-button');
 let cartOverallContainer = document.getElementById('cart-overall-container');
 let cartOverallQuantity = document.getElementById("cart-overall-quantity");
 let cartOverallPrice = document.getElementById("cart-overall-price");
-let paymentOverlay = document.getElementById('payment-overlay')
-let backPaymentButton = document.getElementById('back-payment-button')
 let cartOverallPurchaseButton = document.getElementById('cart-overall-purchase-button')
-let pricePaymentContainer = document.getElementById('price-payment-container')
 let inpName = document.getElementById('name')
 let inpPhone = document.getElementById('phone')
 let inpAddress = document.getElementById('address')
@@ -20,11 +17,16 @@ submitButton.addEventListener('click', (e) => {
     e.preventDefault();
 
     var params = {
-        name: document.getElementById('username').value,
-        email: document.getElementById('email-address').value,
-        title: document.getElementById('title').value,
-        message: document.getElementById('message').value
+        name: document.getElementById('username').value.trim(),
+        email: document.getElementById('email-address').value.trim(),
+        title: document.getElementById('title').value.trim(),
+        message: document.getElementById('message').value.trim()
     };
+
+    if (!params.name || !params.email || !params.title || !params.message) {
+        alert("Vui lòng điền đầy đủ thông tin!");
+        return;
+    }
 
     const serviceId = "service_fo2rn5e";
     const templateId = "template_2xx8v1a";

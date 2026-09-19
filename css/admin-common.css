@@ -1,0 +1,239 @@
+/* Style dùng chung cho admin-product & admin-order */
+
+body {
+    background: #f7f5f1;
+    color: #211d16;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.content-wrapper {
+    overflow-x: auto;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    height: 100%;
+    background: #ffffff;
+    border-right: 1px solid #e6e1d6;
+}
+
+.sidebar > div {
+    background: #ffffff !important;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: #211d16;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.sidebar hr {
+    border-color: #e6e1d6;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar ul li {
+    padding: 0;
+    margin: 6px 0;
+    text-align: left;
+}
+
+.sidebar ul li .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #837c6e !important;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.sidebar ul li:hover .nav-link,
+.sidebar ul li .nav-link:hover {
+    background: #f7f5f1;
+    color: #211d16 !important;
+    box-shadow: none;
+    transform: none;
+}
+
+.sidebar ul li .nav-link.active-nav-link {
+    background: #211d16;
+    color: #f5efe3 !important;
+}
+
+.sidebar ul li .nav-link.active-nav-link:hover {
+    background: #211d16;
+    color: #f5efe3 !important;
+}
+
+/* ---------- Page title / primary action ---------- */
+.add-product-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 44px 60px 28px;
+}
+
+.add-product-title h1 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #211d16;
+}
+
+.add-product-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #211d16;
+    color: #f5efe3;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid #211d16;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-product-button:hover {
+    background-color: #a3803f;
+    border-color: #a3803f;
+}
+
+.add-product-button ion-icon {
+    font-size: 20px;
+}
+
+/* ---------- Table ---------- */
+table {
+    width: 92%;
+    margin: 0 auto 80px;
+    align-self: center;
+    border: 1px solid #e6e1d6;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+table tr:first-child {
+    background-color: #211d16;
+    color: #f5efe3;
+}
+
+th {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 16px 14px;
+    border: none;
+    text-align: left;
+}
+
+tr {
+    color: #211d16;
+    font-size: 14px;
+}
+
+table tr:not(:first-child) {
+    border-top: 1px solid #e6e1d6;
+}
+
+table tr:not(:first-child):hover {
+    background: #f7f5f1;
+}
+
+td {
+    color: #211d16;
+    font-size: 14px;
+    padding: 14px;
+    vertical-align: middle;
+}
+
+.action {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action ion-icon {
+    color: #837c6e;
+    cursor: pointer;
+}
+
+.action ion-icon:hover {
+    color: #211d16;
+}
+
+.action ion-icon[name="trash-outline"]:hover {
+    color: #a13f3f;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .sidebar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar > div {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 6px;
+    }
+
+    .sidebar ul li {
+        margin: 0;
+    }
+
+    .add-product-title {
+        padding: 24px 20px 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    table {
+        width: 96%;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .add-product-title h1 {
+        font-size: 20px;
+    }
+
+    .add-product-button {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    th, td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+}

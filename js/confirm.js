@@ -14,7 +14,7 @@ if (!userInfo || !orderInfo) {
 
     alert("Không tìm thấy thông tin đơn hàng!");
 
-    window.location.href = "main.html";
+    window.location.href = "../index.html";
 
 }
 
@@ -209,9 +209,9 @@ confirmButton.addEventListener("click", async (e) => {
 
             paymentOverlay.style.display = "none";
 
-            window.location.href = "index.html";
+            window.location.href = "../index.html";
 
-        }, 3000);
+        }, 10000);
 
     } catch (error) {
 

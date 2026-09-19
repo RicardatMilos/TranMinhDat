@@ -1,0 +1,182 @@
+/* ============================================================
+   promotion.css — badge giá khuyến mãi + popup thông báo
+   Tông màu đồng bộ khu admin: đen #211d16 / kem #f5efe3 / vàng đồng #a3803f
+   ============================================================ */
+
+.promo-price-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.promo-price-new {
+    color: #a3803f;
+    font-weight: 700;
+}
+
+.promo-price-old {
+    color: #9a9385;
+    font-weight: 400;
+    font-size: 0.75em;
+    text-decoration: line-through;
+}
+
+.promo-badge {
+    background: #211d16;
+    color: #f5efe3;
+    font-size: 0.65em;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* ---------- Popup thông báo khuyến mãi ---------- */
+.promo-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(33, 29, 22, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: promo-fade-in 0.25s ease;
+    padding: 20px;
+}
+
+@keyframes promo-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.promo-popup-box {
+    position: relative;
+    background: #fffdf9;
+    border-radius: 16px;
+    padding: 36px 32px 28px;
+    width: 380px;
+    max-width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+    text-align: center;
+}
+
+.promo-popup-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #837c6e;
+}
+
+.promo-popup-close:hover {
+    color: #211d16;
+}
+
+.promo-popup-eyebrow {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #a3803f;
+    font-weight: 600;
+}
+
+.promo-popup-title {
+    margin: 4px 0 20px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #211d16;
+}
+
+.promo-popup-list {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.promo-popup-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #eee6d8;
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+
+.promo-popup-item img {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.promo-popup-item-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #211d16;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.promo-popup-item-price {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #a3803f;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.promo-popup-item-old {
+    color: #9a9385;
+    font-weight: 400;
+    text-decoration: line-through;
+    font-size: 0.85em;
+}
+
+.promo-popup-more {
+    font-size: 13px;
+    color: #837c6e;
+    margin: 4px 0 16px;
+}
+
+.promo-popup-cta {
+    width: 100%;
+    background: #211d16;
+    color: #f5efe3;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.promo-popup-cta:hover {
+    background: #a3803f;
+}
+
+@media (max-width: 480px) {
+    .promo-popup-box {
+        padding: 28px 20px 22px;
+        width: 100%;
+    }
+
+    .promo-popup-title {
+        font-size: 20px;
+    }
+}

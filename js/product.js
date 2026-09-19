@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 productImage.src = product.productImage
                 productName.innerHTML = product.productName
-                productPrice.innerHTML = Number(product.productPrice).toLocaleString('vi-VN') + "đ"
+                renderPriceInto(productPrice, product)
 
                 cardContainer.addEventListener('click' , () => {
                     let productSku = product.productSku

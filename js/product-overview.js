@@ -53,8 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
             if (product.productSku == productSku) {
 
                 productImageContainer.src = product.productImage;
-                productPriceContainer.innerHTML =
-                    Number(product.productPrice).toLocaleString("vi-VN") + "đ";
+                renderPriceInto(productPriceContainer, product);
 
                 productDescriptionContainer.innerHTML =
                     product.productDescription;
@@ -76,7 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     
                             productSku: product.productSku,
                             productName: product.productName,
-                            productPrice: product.productPrice,
+                            productPrice: getDiscountedPrice(product),
                             productImage: product.productImage,
                             quantity: 1
                     
@@ -109,7 +108,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                             productSku: product.productSku,
                             productName: product.productName,
-                            productPrice: product.productPrice,
+                            productPrice: getDiscountedPrice(product),
                             productImage: product.productImage,
                             quantity: 1
 

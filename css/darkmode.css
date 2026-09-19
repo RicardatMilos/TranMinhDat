@@ -1,0 +1,123 @@
+/* ============================================================
+   DARK MODE - chỉ dùng cho các trang client (không đụng admin)
+   Chỉ đổi màu nền (background-color) và màu chữ (color).
+   Không dùng CSS variable, không đổi layout/kích thước/cấu trúc.
+   Kích hoạt bằng cách thêm class "dark-mode" vào thẻ <body>.
+   ============================================================ */
+
+/* ---------- Nền trang & chữ mặc định ---------- */
+body.dark-mode {
+  background-color: #121212;
+  color: #e8e6e1;
+}
+
+body.dark-mode html {
+  background-color: #121212;
+}
+
+/* ---------- Thanh điều hướng (navbar) ---------- */
+body.dark-mode .navbar {
+  background-color: #1b1b1b !important;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link,
+body.dark-mode .navbar-toggler ion-icon {
+  color: #e8e6e1 !important;
+}
+
+body.dark-mode .search-icon,
+body.dark-mode .log-icon,
+body.dark-mode #cart,
+body.dark-mode #dark-mode-toggle {
+  color: #e8e6e1;
+}
+
+body.dark-mode .search-bar {
+  background-color: #2a2a2a;
+  color: #e8e6e1;
+}
+
+body.dark-mode .log-wrapper {
+  background: rgba(30, 30, 30, 0.95);
+}
+
+body.dark-mode .log-wrapper a {
+  color: #e8e6e1;
+}
+
+/* ---------- Footer ---------- */
+body.dark-mode footer {
+  background-color: #1b1b1b;
+}
+
+body.dark-mode footer h5,
+body.dark-mode footer .nav-link,
+body.dark-mode footer .text-body-secondary,
+body.dark-mode footer p,
+body.dark-mode footer ion-icon {
+  color: #cfcac0 !important;
+}
+
+/* ---------- Tiêu đề & văn bản chung ---------- */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label {
+  color: #e8e6e1;
+}
+
+body.dark-mode .about-container h1,
+body.dark-mode .about-container p,
+body.dark-mode .email-container h1,
+body.dark-mode .news-title,
+body.dark-mode .color,
+body.dark-mode .promo-popup-title {
+  color: #e8e6e1;
+}
+
+/* ---------- Khối/card nền trắng dùng chung nhiều trang ---------- */
+body.dark-mode .about-container,
+body.dark-mode .email-container,
+body.dark-mode .single-news-container,
+body.dark-mode .card-container,
+body.dark-mode .cart-container,
+body.dark-mode .information-container,
+body.dark-mode .payment-container,
+body.dark-mode .payment-form,
+body.dark-mode .promo-popup-box,
+body.dark-mode .container {
+  background-color: #1e1e1e !important;
+  color: #e8e6e1;
+}
+
+/* ---------- Nút bấm nền trắng ---------- */
+body.dark-mode .email-container button,
+body.dark-mode .delete-btn,
+body.dark-mode .information-container button,
+body.dark-mode .button-container button,
+body.dark-mode form button {
+  background-color: #2a2a2a !important;
+  color: #e8e6e1 !important;
+}
+
+/* ---------- Ô nhập liệu (form) ---------- */
+body.dark-mode .email-container input,
+body.dark-mode form input,
+body.dark-mode .information-container input,
+body.dark-mode .payment-form-1 input,
+body.dark-mode .payment-form-2 input,
+body.dark-mode .additional-payment-form input {
+  background-color: #2a2a2a;
+  color: #e8e6e1;
+}
+
+/* ---------- Nút toggle dark mode ---------- */
+#dark-mode-toggle {
+  cursor: pointer;
+}

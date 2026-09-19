@@ -78,8 +78,7 @@ function createProductCard(parent, product, canClick) {
 
     productImage.src = product.productImage;
     productName.innerHTML = product.productName;
-    productPrice.innerHTML =
-        Number(product.productPrice).toLocaleString("vi-VN") + "đ";
+    renderPriceInto(productPrice, product);
 
     parent.appendChild(cardContainer);
 

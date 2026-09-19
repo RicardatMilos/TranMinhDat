@@ -117,3 +117,26 @@ form a:hover{
     transform: scale(1.05);
     transition: all 0.3s ease;
 }
+
+@media (max-width: 600px) {
+  .container{
+    padding: 30px 20px;
+    width: 88vw;
+    box-sizing: border-box;
+  }
+
+  form input{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .line span{
+    width: 40vw;
+  }
+
+  .back{
+    top: 20px;
+    left: 20px;
+    font-size: 36px;
+  }
+}

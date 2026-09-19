@@ -109,4 +109,21 @@
     font-size: 30px;
     cursor:pointer;
   }
+
+  @media (max-width: 600px) {
+    .payment-container{
+      width: 90vw;
+      padding: 30px 20px;
+      box-sizing: border-box;
+    }
+
+    .payment-container img{
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .search-container{
+      display: none;
+    }
+  }
   

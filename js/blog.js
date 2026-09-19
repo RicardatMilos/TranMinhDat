@@ -7,10 +7,7 @@ let returnButton = document.getElementById('return-button')
 let cartOverallContainer = document.getElementById('cart-overall-container')
 let cartOverallQuantity = document.getElementById("cart-overall-quantity");
 let cartOverallPrice = document.getElementById("cart-overall-price");
-let paymentOverlay = document.getElementById('payment-overlay')
-let backPaymentButton = document.getElementById('back-payment-button')
 let cartOverallPurchaseButton = document.getElementById('cart-overall-purchase-button')
-let pricePaymentContainer = document.getElementById('price-payment-container')
 let inpName = document.getElementById('name')
 let inpPhone = document.getElementById('phone')
 let inpAddress = document.getElementById('address')
@@ -57,14 +54,6 @@ fetch(url)
     .catch(error => {
         console.error("Fetch NewsAPI failed:", error);
     });
-
-    
-cart.addEventListener('click', () => {
-    overlay.style.display = 'flex'
-    returnButton.addEventListener('click', () => {
-        overlay.style.display = 'none'
-    })
-})
 
 function renderCart() {
 

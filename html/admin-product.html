@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/admin-product.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin-common.css">
+    <link rel="stylesheet" href="../css/admin-product.css">
 </head>
 <body>
     <div style="display: flex;" class="sidebar">
@@ -22,7 +23,7 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item">
-                <a href="admin-product.html" class="nav-link link-dark">
+                <a href="admin-product.html" class="nav-link link-dark active-nav-link">
                   <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
                   Sản Phẩm
                 </a>
@@ -34,24 +35,24 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link link-dark">
+                <a href="admin-promotion.html" class="nav-link link-dark">
                   <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                  Nhóm Sản Phẩm
+                  Khuyến Mãi
                 </a>
               </li>
             </ul>
           </div>
-        <div style="width: 100%; display: flex; justify-content: center; flex-direction: column; align-self: first baseline;">
+        <div class="content-wrapper" style="width: 100%; display: flex; justify-content: center; flex-direction: column; align-self: first baseline;">
             <div class="add-product-title">
                 <h1>Danh Sách Sản Phẩm</h1>
                 <button class="add-product-button" id="add-product-button"><ion-icon name="add-circle-outline"></ion-icon>  Thêm Sản Phẩm</button>
             </div>
             <table id="table">
-                <tr style="width: 100%; background-color: green; color: white;">
+                <tr>
                     <th class="product-image">Ảnh</th>
                     <th class="product-class">Tên Sản Phẩm</th>
                     <th class="product-price">Số lượng</th>
-                    <th class="">Giá</th>
+                    <th>Giá</th>
                     <th class="action">Thao Tác</th>
                 </tr>
             </table>
